@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,700;1,300&display=swap"
+        rel="stylesheet">
+    <script src="https://kit.fontawesome.com/54ce1bb86a.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="list-title" ><i class="fas fa-book"></i> My book list</h1>
+
+        <div class="list">
+            <form action="" class="form">
+                <label for="title">Tytuł:</label>
+                <input type="text" placeholder="Tytuł twojej książki" class="title">
+                <label for="author">Autor:</label>
+                <input type="text" placeholder="Imię i nazwisko autora" class="author">
+                <label for="category">Gatunek:</label>
+                <input type="text" placeholder="Gatunek" class="category">
+                <button class="addBtn btn" type="button">Dodaj do listy</button>
+            </form>
+            <p class="info-alert"></p>
+            <table class="table-body">
+                <thead>
+                    <tr id="table">
+                        <th>Tytuł</th>
+                        <th>Imię i nazwisko</th>
+                        <th>Gatunek</th>
+                        <th>Przeczytana</th>
+                        <th>Edytuj</th>
+                        <th>Usuń</th>
+                    </tr>
+                </thead>
+                <tbody class="my-book">
+                    <tr id="table-0">
+                        <th>Wybawiciel</th>
+                        <th>Jo Nesbo</th>
+                        <th>Thriller</th>
+                        <th><button class="readBtn btn"><i class="fas fa-check"></i></button></th>
+                        <th><button class="editBtn btn"><i class="fas fa-pencil-alt"></i></button></th>
+                        <th><button class="deleteBtn btn" btn><i class="fas fa-times"></i></button></i></th>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="popup popup-window popupBody animate__animated animate__backInUp">
+            <div class="popupBody">
+                <h2 class="popup-title">Edytuj treść</h2>
+                <p class="popupinfo"></p>
+                <form action="" class="popup-form">
+                    <label for="title">Tytuł</label>
+                    <input type="text" name="title" placeholder="Tytuł twojej książki:" class="title-popup">
+                    <label for="author">Autor</label>
+                    <input type="text"  name="author" placeholder="Imię i nazwisko autora:" class="author-popup">
+                    <label for="category">Gatunek</label>
+                    <input type="text" name="category" placeholder="Gatunek:" class="category-popup">
+                    <div class="popup-btn">
+                        <button class="popupBtn accept btn" type="button">Zatwierdź</button>
+                        <button class="popupBtn cancel btn" type="button">Anuluj</button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+        <div class="popup-check animate__animated animate__backInUp">
+            <div class="delete-check">
+                <h3 class="check-info">Czy na pewno usunąć z listy: </h3>
+                    <div class="check-book"><span>"Krew na śniegu"</span> <span>Jo Nesbo</span></div>
+                <div class="check-btn">
+                    <button class="accept-btn btn">Usuń</button>
+                    <button class="cancel-btn btn">Anuluj</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./script.js"></script>
+    <script src=""></script>
+</body>
+
+</html>
