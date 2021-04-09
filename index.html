@@ -27,7 +27,10 @@
                 <label for="category">Gatunek:</label>
                 <input type="text" placeholder="Gatunek" class="category">
                 <button class="addBtn btn" type="button">Dodaj do listy</button>
+                <label for="search">Szukaj książki</label>
+                <input type="text" placeholder="Wpisz szukaną frazę" class="search" id="search">
             </form>
+    
             <p class="info-alert"></p>
             <table class="table-body">
                 <thead>
@@ -40,11 +43,19 @@
                         <th>Usuń</th>
                     </tr>
                 </thead>
-                <tbody class="my-book">
+                <tbody class="my-book" id="my-book">
                     <tr id="table-0">
                         <th>Wybawiciel</th>
                         <th>Jo Nesbo</th>
                         <th>Thriller</th>
+                        <th><button class="readBtn btn"><i class="fas fa-check"></i></button></th>
+                        <th><button class="editBtn btn"><i class="fas fa-pencil-alt"></i></button></th>
+                        <th><button class="deleteBtn btn" btn><i class="fas fa-times"></i></button></i></th>
+                    </tr>
+                    <tr id="table-0">
+                        <th>Wzzzl</th>
+                        <th>aaa</th>
+                        <th>zaxcr</th>
                         <th><button class="readBtn btn"><i class="fas fa-check"></i></button></th>
                         <th><button class="editBtn btn"><i class="fas fa-pencil-alt"></i></button></th>
                         <th><button class="deleteBtn btn" btn><i class="fas fa-times"></i></button></i></th>

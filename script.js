@@ -25,6 +25,7 @@ let cancelEditBtn;// przycisk anulowania zmiany w edycji
 let form;//formularz głowny
 
 
+
 const main = ()=>{
     myDOMElements();
     myDOMEvents();
@@ -45,13 +46,13 @@ const myDOMElements = ()=>{
     popupCheck = document.querySelector('.popup-check');
     acceptBtn = document.querySelector('.accept-btn');
     cancelBtn = document.querySelector('.cancel-btn');
-    popupBody = document.querySelector('.popup-window')
-    popupInputTitle = document.querySelector('.title-popup')
-    popupInputAuthor = document.querySelector('.author-popup')
-    popupInputCategory = document.querySelector('.category-popup')
+    popupBody = document.querySelector('.popup-window');
+    popupInputTitle = document.querySelector('.title-popup');
+    popupInputAuthor = document.querySelector('.author-popup');
+    popupInputCategory = document.querySelector('.category-popup');
     acceptEditBtn = document.querySelector('.accept');
-    cancelEditBtn = document.querySelector('.cancel')
-    form = document.querySelector('.form')
+    cancelEditBtn = document.querySelector('.cancel');
+    form = document.querySelector('.form');
 
 }
 
@@ -62,7 +63,8 @@ const myDOMEvents = ()=>{
     cancelBtn.addEventListener('click', closeCheckPopup)
     acceptEditBtn.addEventListener('click', editFunction);
     cancelEditBtn.addEventListener('click', cancelEditFunction);
-    form.addEventListener('keyup', addByKey)
+    form.addEventListener('keyup', addByKey);
+    search.addEventListener('input', searchFunction)
 }
 
 //Funkcja dodawania książki
@@ -73,6 +75,7 @@ const addNewBook = ()=>{
         infoAlert.innerText = '';
         newBook = document.createElement('tr');
         newBook.setAttribute('id', `table-${idNumber}`);
+        // arrBooks.push(newBook)
         myBook.appendChild(newBook);
 
         const newTitle = document.createElement('th');
@@ -215,5 +218,18 @@ const addByKey = ()=>{
         infoAlert.innerText = '';
     }
 }
+
+// funkcja wyszukiwania 
+    function searchFunction() {
+        const input = document.getElementById("search");
+        const inputStr = input.value.toUpperCase();
+        document.querySelectorAll('#my-book tr:not(.header)').forEach((tr) => {
+          const anyMatch = [...tr.children]
+            .some(td => td.textContent.toUpperCase().includes(inputStr));
+          if (anyMatch) tr.style.removeProperty('display');
+          else tr.style.display = 'none';
+        });
+          }
+ 
 
 document.addEventListener('DOMContentLoaded', main);
